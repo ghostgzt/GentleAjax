@@ -1,0 +1,89 @@
+Remote Address:210.14.139.138:80
+Request URL:http://api.uyan.cc/v4/submit/
+Request Method:POST
+一层
+Status Code:200 OK
+Request Headersview source
+Accept:*/*
+Accept-Encoding:gzip,deflate
+Accept-Language:zh-CN,zh;q=0.8
+Connection:keep-alive
+Content-Length:48
+Content-Type:application/x-www-form-urlencoded
+Cookie:PHPSESSID=6svv8tlmgm7jn5h96ih0g96fb6; __utmt=1; auto_login=true; login_email=GhostGzt%40163.com; uyan_login_auth=67821UVx18xHxcsGvJFdT3r1NTxqCsKp64KT53TFsKk7hgtrMlZk%2BUz7RckIQjc9NZFufSyumn8mOAg441HZwqFMr6jD0kNp2B2h%2BZ%2BZA05erLRpOH%2Be%2BZ3%2F51W%2BzIeUCY0w%2BIG3tnb9%2F7WYkxvyjkqxwEiLehfCCN8qho2vuHghXTvrDgDlt7C%2FzAILMN8eTWymInxi8NwUY8npxjGNyJOhJ%2B1Ej863WeXf%2BYgI2OdO97Fb11daNAHmCqCdPqr3prv%2BsmNduU%2BUOBNEDqUofnNb0qCZjQO5YDenGsTk7jv7%2BMY; __utma=157093439.1162755201.1428242085.1428242085.1428681960.2; __utmb=157093439.9.10.1428681960; __utmc=157093439; __utmz=157093439.1428242085.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+Host:api.uyan.cc
+Origin:http://api.uyan.cc
+Referer:http://api.uyan.cc/v4/comment/?uid=6&frameid=3090826&du=uyan.cc&su=uyan.cc%2Fdemo&pic=http%3A%2F%2Fwww.uyan.cc%2Fresource%2Fimages%2Fuyan4%2Fpoint.jpg&url=http%3A%2F%2Fwww.uyan.cc%2Fdemo&title=%E5%8F%8B%E8%A8%80V4.0%E5%85%A8%E6%96%B0%E5%90%8E%E5%8F%B0%E4%B8%8A%E7%BA%BF%EF%BC%81%20-%20%E5%8F%8B%E8%A8%80%20-%20%E6%9C%80%E4%B8%93%E4%B8%9A%E7%9A%84%E7%A4%BE%E4%BC%9A%E5%8C%96%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F&t=1428682240971
+User-Agent:Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36
+Form Dataview sourceview URL encoded
+rid:0
+message:test[心动]
+sid:7
+Response Headersview source
+Connection:keep-alive
+Content-Encoding:gzip
+Content-Type:text/html
+Date:Fri, 10 Apr 2015 16:13:35 GMT
+JiaTag:de2a570993d722c9422fba59eaa5a397
+Server:nginx/1.4.4
+Set-Cookie:uyan_cmt=test%5B%E5%BF%83%E5%8A%A8%5D; expires=Fri, 10-Apr-2015 16:23:35 GMT
+Set-Cookie:uyan_cmt_time=1428682415; expires=Fri, 10-Apr-2015 16:23:35 GMT
+Transfer-Encoding:chunked
+Vary:Accept-Encoding
+X-Powered-By:PHP/5.3.6
+
+
+
+
+http://api.uyan.cc/v4/submit/
+post
+rid=0&message=test%5B%E5%BF%83%E5%8A%A8%5D&sid=7
+
+
+
+
+
+
+二层
+submit/
+/v4
+1 requests ❘ 617 B transferred
+HeadersPreviewResponseCookiesTiming
+Remote Address:210.14.139.138:80
+Request URL:http://api.uyan.cc/v4/submit/
+Request Method:POST
+Status Code:200 OK
+Request Headersview source
+Accept:*/*
+Accept-Encoding:gzip,deflate
+Accept-Language:zh-CN,zh;q=0.8
+Connection:keep-alive
+Content-Length:32
+Content-Type:application/x-www-form-urlencoded
+Cookie:uyan_cmt=test%5B%E5%BF%83%E5%8A%A8%5D; uyan_cmt_time=1428682415; PHPSESSID=6svv8tlmgm7jn5h96ih0g96fb6; auto_login=true; login_email=GhostGzt%40163.com; uyan_login_auth=67821UVx18xHxcsGvJFdT3r1NTxqCsKp64KT53TFsKk7hgtrMlZk%2BUz7RckIQjc9NZFufSyumn8mOAg441HZwqFMr6jD0kNp2B2h%2BZ%2BZA05erLRpOH%2Be%2BZ3%2F51W%2BzIeUCY0w%2BIG3tnb9%2F7WYkxvyjkqxwEiLehfCCN8qho2vuHghXTvrDgDlt7C%2FzAILMN8eTWymInxi8NwUY8npxjGNyJOhJ%2B1Ej863WeXf%2BYgI2OdO97Fb11daNAHmCqCdPqr3prv%2BsmNduU%2BUOBNEDqUofnNb0qCZjQO5YDenGsTk7jv7%2BMY; __utma=157093439.1162755201.1428242085.1428242085.1428681960.2; __utmb=157093439.9.10.1428681960; __utmc=157093439; __utmz=157093439.1428242085.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+Host:api.uyan.cc
+Origin:http://api.uyan.cc
+Referer:http://api.uyan.cc/v4/comment/?uid=6&frameid=3090826&du=uyan.cc&su=uyan.cc%2Fdemo&pic=http%3A%2F%2Fwww.uyan.cc%2Fresource%2Fimages%2Fuyan4%2Fpoint.jpg&url=http%3A%2F%2Fwww.uyan.cc%2Fdemo&title=%E5%8F%8B%E8%A8%80V4.0%E5%85%A8%E6%96%B0%E5%90%8E%E5%8F%B0%E4%B8%8A%E7%BA%BF%EF%BC%81%20-%20%E5%8F%8B%E8%A8%80%20-%20%E6%9C%80%E4%B8%93%E4%B8%9A%E7%9A%84%E7%A4%BE%E4%BC%9A%E5%8C%96%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F&t=1428682240971
+User-Agent:Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36
+Form Dataview sourceview URL encoded
+rid:29888854
+message:test2
+sid:7
+Response Headersview source
+Connection:keep-alive
+Content-Encoding:gzip
+Content-Type:text/html
+Date:Fri, 10 Apr 2015 16:16:56 GMT
+JiaTag:de2a570993d722c9422fba59eaa5a397
+Server:nginx/1.4.4
+Set-Cookie:uyan_cmt=test2; expires=Fri, 10-Apr-2015 16:26:56 GMT
+Set-Cookie:uyan_cmt_time=1428682616; expires=Fri, 10-Apr-2015 16:26:56 GMT
+Transfer-Encoding:chunked
+Vary:Accept-Encoding
+X-Powered-By:PHP/5.3.6
+
+
+
+http://api.uyan.cc/v4/submit/
+post
+rid=29888854&message=test2&sid=7

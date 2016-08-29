@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>最新获取SkyDrive音乐外链mp3地址</title>
+<meta name="author" content="ximan" />
+<meta name="keywords" content="最新获取SkyDrive音乐外链mp3地址" />
+<meta name="description" content="最新获取SkyDrive音乐外链mp3地址" />
+<script type="text/javascript">
+//点击转码获取链接方法
+function getLink(){
+	//获取原链接
+	var skydrive_old = document.getElementById("skydrive_old");
+	//非空验证
+	if(skydrive_old.value.length == 0){
+		alert("链接不能为空");
+		skydrive_old.focus();
+		return false;
+	}
+	//提取原链接中关键代码
+	skydrive_old = skydrive_old.value.split("=")[1];
+	//拼接最终结果
+	document.getElementById("skydrive_new").value = "http://storage.live.com/items/"+skydrive_old+"?a.mp3";
+}
+</script>
+</head>
+
+<body>
+<h1><a href="http://www.i7086.com" target="_blank" title="交流的生活的点滴与收获">七零八落</a></h1>
+<h2><a href="http://www.i7086.com/skydriveyinlewailianzuixinhuoqufangfa" target="_blank">最新获取SkyDrive音乐外链mp3地址方法</a></h2>
+<form id="skydrive_form">
+	<p>链接：<input style="width:500px;" type="text" id="skydrive_old" value="" onMouseOver="this.select()"  /></p>
+	<p>结果：<input style="width:500px;" type="text" id="skydrive_new" value="" onMouseOver="this.select()" /></p>
+	<p><input type="button" id="btn" value="转码" onClick="getLink()" /><input type="reset" value="清空" onclick="this.form.reset();" /></p>
+</form>
+</body>
+<h3><span style="color: #993366;">七零八落优秀文章精选：</span></h3>
+
+<li><a href="http://www.i7086.com/xianjianqixiachuan5shiyongxunijiwuxianzhiyunxing" target="_blank">仙剑奇侠传5使用虚拟机无限制运行（图文教程）</a>
+<li><a href="http://www.i7086.com/gugeyingyonggoagentrangninziyoufangwenwangluotuwenjiaocheng" target="_blank">谷歌应用GoAgent让您自由访问网络（图文教程）</a>
+<li><a href="http://www.i7086.com/photobucketyouxiumianfeitupianshipinfenxiangwangzhannengwailiansudukuai" target="_blank">photobucket优秀免费图片视频分享网站、能外链、速度快</a>
+<li><a href="http://www.i7086.com/onmvoiceguowaiwendinggaosuzhuanyemp3yinlefenxiangpingtaizhichiwailian" target="_blank">Onmvoice国外稳定高速专业MP3音乐分享平台支持外链（图文教程）</a>
+<li><a href="http://www.i7086.com/tongguohtmlzaixianbianjiqichazhaotupianzhenshidizhi" target="_blank">通过HTML在线编辑器查找SkyDrive图片真实地址(附SkyDrive申请图文教程)</a>
+</html>

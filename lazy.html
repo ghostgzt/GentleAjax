@@ -1,0 +1,42 @@
+<!DOCTYPE html><img class="sss" src="" title="http://127.0.0.1/gftp.php?op=cjx&name=zip&cs=eyJuYW1lIjoidGJzemlwXC90ZXN0LnppcCIsImZpbGUiOiIxMF8wMTAuanBnIn0=" >
+
+<br>
+<img class="sss" src="" title="http://127.0.0.1/gftp.php?op=cjx&name=zip&cs=eyJuYW1lIjoidGJzemlwXC90ZXN0LnppcCIsImZpbGUiOiIxMF8wMTAuanBnIn0=" >
+<br>
+<img class="sss" src="" title="http://127.0.0.1/gftp.php?op=cjx&name=zip&cs=eyJuYW1lIjoidGJzemlwXC90ZXN0LnppcCIsImZpbGUiOiIxMV8wMTEuanBnIn0=" >
+<br>
+<img class="sss" src="" title="http://127.0.0.1/gftp.php?op=cjx&name=zip&cs=eyJuYW1lIjoidGJzemlwXC90ZXN0LnppcCIsImZpbGUiOiIxMV8wMTEuanBnIn0=" >
+<script>
+window.onload=function(){
+lazyload("sss",0,1);
+}
+window.onscroll=function(){
+lazyload("sss",1000);
+}
+function lazyload(classname,lazytime,first){
+
+setTimeout(function(){
+var c=document.getElementsByClassName(classname);
+if(!c.length){return false;}
+if(window.pageYOffset+window.screen.availHeight>c[0].offsetTop){
+if(c[0].title){
+				 c[0].src=c[0].title;
+				 c[0].title="";
+				 c[0].style.minHeight="0";
+				 c[0].style.maxWidth="auto";
+				 c[0].style.visibility="visible";
+				 c[0].className="";
+			}
+}			
+if(first){
+			for(var i=0;i<c.length;i++){
+				c[i].style.minHeight="100%";
+				c[i].style.maxWidth="100%";
+				c[i].style.visibility="hidden";
+			}
+}			
+	}
+	,lazytime);			
+
+}
+</script>

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd“>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="test.js"></script>
+<div id="test" onclick='$("#test").html("123");'>456</div>
+<div class="test" onclick="alert(this.offsetTop);">fff</div>
+
+<script>
+
+Ajaxs.ajaxurl="http://localhost/ajax/ajax.php";
+
+
+//alert(Urls.getQueryStringByName("sss"));
+
+/*alert(Storages.setStorage("t","ddd",3600,0));
+alert(Storages.getStorage("t"));
+alert(Storages.clearStorage("t"));*/
+
+//prompt("",Ajaxs.getfile("http://127.0.0.1/%E7%BE%8E%E8%85%BF%E4%B8%89%E4%BA%BA%E7%BB%84%E7%83%AD%E8%88%9EGIRLS.mkv","","video/mp4",null,1));//url, referrer, type, method,adv
+//http://127.0.0.1/ajax/ajax.php?ajax_get_url=aHR0cDovLzEyNy4wLjAuMS8lRTclQkUlOEUlRTglODUlQkYlRTQlQjglODklRTQlQkElQkElRTclQkIlODQlRTclODMlQUQlRTglODglOUVHSVJMUy5ta3Y=&method=WyIiLCIiLCIiLCIiLCIiLCIiLCIiXQ==&type=dmlkZW8vbXA0&adv=1&nvc=Gentle&verify=e4396ac193533682ecb8558bde1311c9
+
+//Tools.Curl("http://127.0.0.1/ajax/?sss=1", "GET", "", function(data){alert(data)},function (data){return false;}, "utf-8");
+//Tools.Curl("http://localhost/ajax/ajax.php?cors=1", "get", "", function(e){alert(e);});
+
+/*Tools.Query(1);
+$("#test")[0].innerHTML="123";
+$(".test")[0].innerHTML="456";*/
+/*Tools.LoadJS("http://libs.baidu.com/jquery/1.9.0/jquery.js","jq",function(){
+$("#test").html("123");
+});*/
+
+/*Ajaxs.savefile("ff.txt","alert(123);", function(e){alert(e);});
+Ajaxs.readfile("ff.txt", function(e){alert((e));}, "curl");
+Ajaxs.delfile("ff.txt", function(e){alert((e));}, "curl");*/
+
+/*var a={"t":"123","a":[1,2,3]};
+alert(a["a"][0]);
+alert(Tools.arrayToJson(a));
+prompt("",Tools.arrayToJson(Ajaxs.setrequest({"method":"get", "postdata":"", cookie:"", "referer":"", "proxy":"", "agent":"", "mshead":["1","2","3"]})));*/
+
+//var ws=Workers.start("data:application/javascript;base64,b25tZXNzYWdlPWZ1bmN0aW9uKGV2dCl7dmFyIGQ9ZXZ0LmRhdGE7cG9zdE1lc3NhZ2UoZCk7fQ==",function(e){alert(e);if(e=="stop"){Works.stop(ws);}});Works.send(ws,"d");
+
+//alert(Md5.short("ddd"));		
+
+/*Ajaxs.PostScript("http://localhost/ajax/ajax.php", 
+{"op":"postcallback",
+"url":Base64.encode("http://www.qq.com/"),
+"method":"","encode":Base64.encode("utf-8|gbk"),"match":"","cache":"3600",
+"verify":Md5.short(Tools.stringToliteHex("http://www.qq.com/"))},
+ function(e){
+document.write(Base64.decode(e.data));
+});*/
+
+//Ajaxs.shell("dir c:",function(e){alert((e))},"curl",{"encode":"UTF-8|GBK","curl":{"encoding":"utf-8"}});
+//Ajaxs.post("http://www.baidu.com/",function(e){alert((e))},{"cache":3600},1);
+//Ajaxs.post("http://www.qq.com/",function(e){alert((e))},{"encode":"UTF-8|GBK","cache":3600,"curl":{"encoding":"gbk"}},0);
+//Ajaxs.get("http://www.baidu.com/",function(e){alert(e)},{"cache":3600,"curl":{"encoding":"utf-8"}},0);
+
+//Ajaxs.code("return '123';",function(e){alert(e);});
+/*Ajaxs.code(Base64.decode("JHRpbWUgPSBkYXRlKCdyJyk7CmVjaG8gImRhdGE6IFRoZSBzZXJ2ZXIgdGltZSBpczogeyR0aW1lfVxuXG4iOwpmbHVzaCgpOw=="), function(e,s){document.writeln(e+"<br>");EventSources.stop(s)},"event");*/
+//Ajaxs.code(Base64.decode("\n"), function(e,w){alert(e);w.onmessage=function(e){alert("s:"+e.data);Workers.stop(w);};Workers.send(w,"postMessage('123');");},"worker");
+
+/*IDBs.deleteDB("test");
+IDBs.openDB("test",1,function(db){
+	IDBs.addData(db,'students',[{id:1001,name:"Byron",age:24},{id:1002,name:"Frank",age:30},{id:1003,name:"Aaron",age:26},{id:1004,name:"Casper",age:26}]);
+	IDBs.addData(db,'students2',[{id:1001,name:"Byron",age:24},{id:1002,name:"Frank",age:30},{id:1003,name:"Aaron",age:26},{id:1004,name:"Casper",age:26}]);			
+	IDBs.getDataByKey(db,'students',1001,function(e){
+		console.log(e);	
+	});
+	IDBs.getDataByIndex(db,'students',"ageIndex",26,function(e){
+		console.log(e.id);
+	});
+	IDBs.closeDB(db);
+},[{"table":"students","key":"id","indexs":[{"index":"nameIndex",name:"name","unique":true},{"index":"ageIndex","name":"age","unique":false}]},{"table":"students2","key":"id","indexs":[{"index":"nameIndex",name:"name","unique":true},{"index":"ageIndex","name":"age","unique":false}]}],function(db){});*/
+
+//console.log(Tools.getUA("Safari"));
+
+document.writeln("操你妹的中國淫中國淫".replaceAll("淫","人"));
+/*test.innerHTML="sss";
+Tools.IncludeJS("tes","alert(123);");*/
+//Tools.DropWindow("123",(function(){return "<h1>测试</h1>"})(),"width:400px;height:200px;left:45%;top:35%;");
+/*Tools.Query(1);
+$(".test")[0].innerHTML="123";*/
+
+/*var s=Nods.append(document.body,(function(){var sf=Nods.create("iframe");sf.id="ifm";return sf;})(),"",2);
+s.onload=function(){ window.frames[0].postMessage('getcolor','*');};*/
+//Nods.insert(test,Nods.create("div","dsfsdfds")).style.display="none";
+//Nods.append(test,"div","<span>sssdd</span>",1);
+//Nods.remove(test);
+//Nods.hide(test,1);
+
+/*MDBs.setConnectInfo("127.0.0.1:3306","root","root","ggtest",function(sql){
+	sql.checkDB(function(e){alert((e))},"curl");
+	sql.createDB(function(e){alert((e))});
+	sql.createTable("k",'{"uid":15,"sid":256,"type":256,"ints":256,"page":256,"pic":256}',function(e){alert((e))},"curl");
+	sql.writeValue("k",'{"uid":1,"sid":"test1","type":"ff","ints":256,"page":"ss","pic":"none"}',function(e){alert((e))},"curl");
+	sql.updateValue("k","uid=1","pic='nn'",function(e){alert((e))},"curl");
+	sql.readValue("k","pic","uid=1",function(e){alert((e))},"curl");
+	sql.delValue("k","uid=1",function(e){alert((e))},"curl");
+	sql.delDB(function(e){alert((e))},"curl");
+});*/
+
+
+Pjaxs.listen(function(e){
+	if(e){
+		console.log(e.path);
+		Tools.LoadJS("http://libs.baidu.com/jquery/1.9.0/jquery.js","jq",function(){
+			$("#test").html("456");
+		});
+	}else{
+		Tools.IncludeJS("s",(function(){alert("123")})());
+		Tools.LoadJS("http://libs.baidu.com/jquery/1.9.0/jquery.js","jq",function(){
+			$("#test").html("123");
+		});
+	}
+});
+//Pjaxs.push({path:"xxx"},"dd","xxx.html");
+document.writeln("sss".css(["link","http://www.baidu.com/"]));
+alert(Tools.getdate("yyyy/MM/dd"));
+alert(Tools.getdate("utc"));
+alert(Tools.getdate("raw"));
+alert(Tools.getRandomNum(100,200));
+alert("dsx123".match(/\d+/g));
+//Ajaxs.SwfScript("http://api.bz/crossdomain.xml", "GET","",function(result){alert(result);},function(){alert("Nothing");},1000);
+
+</script>

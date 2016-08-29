@@ -1,0 +1,138 @@
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<body style="margin:0">
+<div id="main"></div>
+<script>
+var dm_run=1;
+var dm_width=document.documentElement.clientWidth;
+var dm_height=document.documentElement.clientHeight ;
+var dm_main=document.getElementById("main");
+dm_main.setAttribute("style","overflow:hidden;position:absolute;width:"+dm_width+"px;height:"+dm_height+"px;background:black;opacity:0.8");
+function GetRandomNum(Min,Max)
+{   
+var Range = Max - Min;   
+var Rand = Math.random();   
+return(Min + Math.round(Rand * Range));   
+}   
+function add_dm(content,dm_style,dm_position){//"color:red;background:black;position:absolute"
+if(!dm_style){dm_style="";}
+if(!dm_position){dm_position=3;}
+    dm_pos=GetRandomNum(1,dm_position+1);
+var dm_szx=dm_height/dm_position;
+var dm_position_r0,dm_position_r1;
+dm_position_r0=dm_szx*(dm_pos-1);
+dm_position_r1=dm_szx*(dm_pos);
+setTimeout(
+    function(){
+        var c = document.createElement("span");
+        c.setAttribute("style","white-space:nowrap;"+dm_style);
+        c.setAttribute("onmouseover","dm_run=0");
+        c.setAttribute("onmouseout","dm_run=1");
+        c.innerHTML=content;
+        var s=dm_main.appendChild(c);
+        s.style.marginTop=GetRandomNum(0,dm_height);
+        s.style.marginLeft=dm_width.toString()+"px";
+        
+        
+        var dogtag=new Date().getTime();
+        eval('counter'+dogtag+'= GetRandomNum(0,100)');
+        var myFunction = function(){
+            if(dm_run){
+                if(parseInt(s.style.marginLeft)>0){
+                    s.style.marginLeft=parseInt(s.style.marginLeft)-GetRandomNum(0,10);				
+                }else{
+                    s.style.marginLeft=dm_width.toString()+"px";
+                }
+					if(parseInt(s.style.marginTop)>20){
+						if(parseInt(s.style.marginTop)+20>dm_height){
+							s.style.marginTop="40px";
+						}else{
+							s.style.marginTop=(parseInt(s.style.marginTop)+(GetRandomNum(0,2)-1)).toString()+"px";
+						}
+					}else{
+						if(parseInt(s.style.marginTop)<20||parseInt(s.style.marginTop)==20){
+							s.style.marginTop=(dm_height-40).toString()+"px";
+						}
+					}					
+            } 
+			eval('clearInterval(interval'+dogtag+')');
+		   eval('counter'+dogtag+' = GetRandomNum(0,100);');
+			eval('interval'+dogtag+'= setInterval(myFunction'+dogtag+', counter'+dogtag+')');
+        }
+        eval('myFunction'+dogtag+'=myFunction');
+        eval('interval'+dogtag+'= setInterval(myFunction'+dogtag+', counter'+dogtag+')');
+    
+        
+        
+        
+        
+        
+        /*setInterval(function(){
+        //alert(parseInt(s.style.left));
+        if(dm_run){
+            if(parseInt(s.style.left)>0){
+                s.style.left=parseInt(s.style.left)-1;
+            }else{
+                s.style.left=dm_width.toString()+"px";
+            }
+        }
+        },GetRandomNum(0,1000)/1000*10);   */
+        
+        
+    }
+    ,GetRandomNum(0,10)*1000);
+}
+//add_dm("<div ><img src='22 - 1.jpg' height='100px'><span style='line-height:100px;text-align:center'>1235464</span></div>","color:red;background:white;position:absolute");
+/*add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");
+add_dm("sddsd","color:red;background:black;position:absolute");
+add_dm("操你妹哦","color:red;background:black;position:absolute");*/
+/*
+add_dm("操你妹哦","color:red;background:black;position:absolute",1);
+add_dm("sddsd","color:red;background:black;position:absolute",1);
+add_dm("操你妹哦","color:red;background:black;position:absolute",2);
+add_dm("sddsd","color:red;background:black;position:absolute",2);
+add_dm("操你妹哦","color:red;background:black;position:absolute",2);
+add_dm("sddsd","color:red;background:black;position:absolute",3);
+add_dm("操你妹哦","color:red;background:black;position:absolute",3);
+add_dm("sddsd","color:red;background:black;position:absolute",3);
+add_dm("sddsd","color:red;background:black;position:absolute",1);
+add_dm("操你妹哦","color:red;background:black;position:absolute",1);
+add_dm("sddsd","color:red;background:black;position:absolute",1);
+add_dm("操你妹哦","color:red;background:black;position:absolute",2);
+add_dm("sddsd","color:red;background:black;position:absolute",2);
+add_dm("操你妹哦","color:red;background:black;position:absolute",2);
+add_dm("sddsd","color:red;background:black;position:absolute",3);
+add_dm("操你妹哦","color:red;background:black;position:absolute",3);
+add_dm("sddsd","color:red;background:black;position:absolute",3);
+*/
+//alert();
+</script>
+</body>
+</html>

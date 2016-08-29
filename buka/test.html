@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="curl/base64.js"></script>
+
+</head>
+<body>
+
+<canvas id="myCanvas" width="664" height="950">
+Your browser does not support the canvas element.
+</canvas>
+
+<script type="text/javascript">
+	AjaxCrossFlashFile="curl/ajaxcdr.swf";
+	document.write('<script type="text/javascript" src="curl/ajaxcdr.js"></scr'+'ipt>');	
+	var b= new Base64();
+	function kcurl(url,code,method,data,interval){
+	alert(url);
+		setTimeout(function(){AjaxCrossDomainRequest(url, method?method:'GET', data?data:'',code);},interval?interval:2000);
+	}
+	//"data:image/gif;base64,R0lGODlhdQAmAKIAAOYyL+rU4llg6Jmd8e92dCky4eEGAv///yH5BAAAAAAALAAAAAB1ACYAAAP/eLrc/jC2IEoZMATJu/9gyFVWIUyksIls677LUJbrEcxWDe98f+CWk4I0w/iOSNANKJQBC8mo9LEEDp8F3XR7rOIU2Cx3jHwKsUKyWqRhEEvGN3xN91BoCq8l9tTW/244Rk4mOkBGgIl8VjF+d4V5A5KKf3IWiCCEOZRraGxPnGqeIZpzoVyjDBptDpYmp1yumI9BWq5QUQS6fn+lm3lYmLdSBsW8xcjJBgAABLwfAMhXRQt6ODWuJ8rb3AYK0d3h4OHIBC7jC0TCYb/ZB+Th3/Dc4/PmLOgSvkwK+xjMAAEmCwhQnrc8rFSxGkiwnoFnEnTp0mdqlJw0DgIggwgu/08xABM+KkhGJdm9JJqMhGkyQIAATA3HxVwATuO8jyQfECiXJyYzZwzyOSilcqWEmzkP1ES6LGmDcStshjspNJAgMOwwNmBajGZXGyJVhU22quxOaR7hrahqQ52DC1jh/nj1AG0Eux3BLgu59x3SkxHO9mVLhJfcirUc2IWA96vUbvf+QkNbldCgIGCKHi6h1e/Bu1+VOiYHYAVTwBHyCfWyocoZzZovbf3ok1njzx/IltUg+GG13twMfta0gdDruLH3MOD6uaPDcI8hCAZp4/k24elmtOacGXlcPAuYe/VmnVt0ncioTyeYU+ibQRWOHyCRXEz40BDyivYWYBzQAIbTbeBUNTIZRF1QlNlVimGdfffLSPg9oJ9+vVV4H23smWSgFqrZZc0AWiTWACMXcjAhfgAqgxpXKwDXDXbZsSPjVcth6NNtZj3nzCpM1dDfPDACM+OQ9l2I1HiPlfNceentMoGLygQp5Eq3aKfYaUgOdBIB9RyYSEsmvASiFgG0RMRLEK2RAAA7"
+function getpicdat(filename,dataurl){	
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+var img=new Image();
+img.src=dataurl;
+img.crossOrigin = "*";
+cxt.drawImage(img,0,0,664,950);
+return (c.toDataURL());
+}
+var url="http://i0.hdslb.com/u_user/508a062a2cf0c27f463595d25bf066c0.jpg";
+var code =function(result){
+if(result){
+var s=getpicdat("t3710010_0001.jpg","data:image/jpg;base64,"+b.encode(result));
+console.log(s);
+alert(s);
+}else{
+alert("none");
+}
+};
+	alert(url);
+kcurl(url,code);
+</script>
+
+</body>
+</html>

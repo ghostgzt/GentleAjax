@@ -1,0 +1,242 @@
+<title>ExHentai Project - {{cGallery}}</title><script>
+			var cGallery="{{cGallery}}";
+			var cFolder="{{cFolder}}";
+			var cName="{{cName}}";
+			function Base64() {
+
+				// private property
+				_keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+				// public method for encoding
+				this.encode = function(input) {
+					var output = "";
+					var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+					var i = 0;
+					input = _utf8_encode(input);
+					while (i < input.length) {
+						chr1 = input.charCodeAt(i++);
+						chr2 = input.charCodeAt(i++);
+						chr3 = input.charCodeAt(i++);
+						enc1 = chr1 >> 2;
+						enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+						enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+						enc4 = chr3 & 63;
+						if (isNaN(chr2)) {
+							enc3 = enc4 = 64;
+						} else if (isNaN(chr3)) {
+							enc4 = 64;
+						}
+						output = output + _keyStr.charAt(enc1) + _keyStr.charAt(enc2) + _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+					}
+					return output;
+				}
+
+				// public method for decoding
+				this.decode = function(input) {
+					var output = "";
+					var chr1, chr2, chr3;
+					var enc1, enc2, enc3, enc4;
+					var i = 0;
+					input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+					while (i < input.length) {
+						enc1 = _keyStr.indexOf(input.charAt(i++));
+						enc2 = _keyStr.indexOf(input.charAt(i++));
+						enc3 = _keyStr.indexOf(input.charAt(i++));
+						enc4 = _keyStr.indexOf(input.charAt(i++));
+						chr1 = (enc1 << 2) | (enc2 >> 4);
+						chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+						chr3 = ((enc3 & 3) << 6) | enc4;
+						output = output + String.fromCharCode(chr1);
+						if (enc3 != 64) {
+							output = output + String.fromCharCode(chr2);
+						}
+						if (enc4 != 64) {
+							output = output + String.fromCharCode(chr3);
+						}
+					}
+					output = _utf8_decode(output);
+					return output;
+				}
+
+				// private method for UTF-8 encoding
+				_utf8_encode = function(string) {
+					string = string.replace(/\r\n/g, "\n");
+					var utftext = "";
+					for (var n = 0; n < string.length; n++) {
+						var c = string.charCodeAt(n);
+						if (c < 128) {
+							utftext += String.fromCharCode(c);
+						} else if ((c > 127) && (c < 2048)) {
+							utftext += String.fromCharCode((c >> 6) | 192);
+							utftext += String.fromCharCode((c & 63) | 128);
+						} else {
+							utftext += String.fromCharCode((c >> 12) | 224);
+							utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+							utftext += String.fromCharCode((c & 63) | 128);
+						}
+
+					}
+					return utftext;
+				}
+
+				// private method for UTF-8 decoding
+				_utf8_decode = function(utftext) {
+					var string = "";
+					var i = 0;
+					var c = c1 = c2 = 0;
+					while (i < utftext.length) {
+						c = utftext.charCodeAt(i);
+						if (c < 128) {
+							string += String.fromCharCode(c);
+							i++;
+						} else if ((c > 191) && (c < 224)) {
+							c2 = utftext.charCodeAt(i + 1);
+							string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+							i += 2;
+						} else {
+							c2 = utftext.charCodeAt(i + 1);
+							c3 = utftext.charCodeAt(i + 2);
+							string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+							i += 3;
+						}
+					}
+					return string;
+				}
+			}
+			var page=window.location.hash.substring(1)?parseInt(window.location.hash.substring(1)):0;
+			var b = new Base64();
+			var c;
+			function actionall(){
+				var timeout=c.forktime;
+				var tto=prompt("Timeout:",timeout);
+				if(tto){
+					timeout=tto;
+					var ips=document.getElementsByClassName("ipage");
+					for(var i=0;i<ips.length;i++){
+						//setTimeout(afn([ips[i],i],timeout),i*1000);
+						action([ips[i],i],timeout);
+					}
+				}
+			}
+			function afn(c,t)
+			{
+				return function()
+				{
+				  action(c,t);
+				}
+			}
+	function actionone(c,t){
+				loaddata(c[0].getAttribute("href")+"&ajax=1", "GET", "",function(r,c){
+					c[0].innerHTML=c[0].innerHTML+" [Success!]";
+					var p=document.getElementsByClassName("prw")[c[1]];
+					p.setAttribute("href",cName+"/out/"+r);
+					p.innerHTML="-&gt;"+r+"&lt;-";
+				},t, function(r,c){
+					c[0].innerHTML=c[0].innerHTML+" [Failure!]";
+					var p=document.getElementsByClassName("prw")[c[1]];
+					p.setAttribute("href","");
+					p.innerHTML="";
+				},function(r,c){
+					c[0].innerHTML=c[0].innerHTML+" [Timeout!]";
+					var p=document.getElementsByClassName("prw")[c[1]];
+					p.setAttribute("href","");
+					p.innerHTML="";
+				},"",c);
+				c[0].innerHTML="->"+c[0].innerHTML;
+	}
+	function aaone(s,i){
+		var t=prompt("Timeout:",c.forktime);
+		if(t){
+			//bk=1;
+			//clearInterval("actionser");
+			//document.getElementById("reaction").innerHTML="ReAction";
+			actionone([s.parentNode.getElementsByClassName("ipage")[0],i],t);
+		}
+	}					
+			function action(c,t){
+				var ips=document.getElementsByClassName("ipage");	
+				if(c[1]<ips.length){
+					document.getElementById("actionsum").innerHTML=(c[1]+1)+"/"+ips.length;	
+				}
+				actionone(c,t);
+				
+			}
+			function cl(){
+				window.scroll(0,0);	
+				window.location.hash=page-1;
+				document.body.innerHTML="<body></body>";		
+				document.writeln("<style>*{font-family: Microsoft YaHei;text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);}a{font-family : Microsoft YaHei;color: rgba(140, 70, 0, 1);text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);}hr{border: solid 1px #000000;}#main{overflow:hidden;padding:10px;word-break: break-all;}input{border: solid 1px #000000;}pre{font-family: Microsoft YaHei;padding-left:20px;}</style>");
+				document.writeln('<style>.ipic,#ipic{max-width:200px;}.pic,#pic{max-width:220px;display:none;border:solid black 10px;position:absolute;opacity:0;-webkit-transition:opacity 0.5s,display 0.5s;}</style><div id="pic"class="pich" onmouseover="this.style.opacity=\'0\';this.style.display=\'none\';"><img id="ipic"></div><script>pics={over:function(ts){document.getElementById("ipic").src=ts.href;var sd=document.getElementById("pic");sd.style.marginLeft=(ts.offsetLeft-8);sd.style.marginTop=(ts.offsetTop+(((ts.offsetTop+sd.offsetHeight)>document.documentElement.clientHeight)?-(sd.offsetHeight+30):30));sd.style.display="block";sd.style.opacity="1";},out:function(ts){document.getElementById("pic").style.opacity="0";}}</scr'+'ipt>');
+				document.writeln("<div>ExHentai Project - "+c.Gallery+"<span style=\"float:right;right:0;\"><span id=\"actionsum\"></span>&nbsp;<a href=\"javascript:void(0);\" onclick=\"actionall();\">Action</a>&nbsp;<a href=\"getlist.php?del=1&path="+b.encode(cName)+"\">Delete</a>&nbsp;<a target=\"_blank\" href=\"/gftp.php?op=viewframe&file=config.php&folder="+cFolder+"\">Config</a></span></div><hr><div id=\"main\">");
+				document.writeln("Gallery: "+c.Gallery+"<br>");
+				document.writeln("Name: "+b.decode(c.displayname)+"<br>");
+				document.writeln("Page: "+page+"<br>");
+				document.writeln("Pages: "+c.pages+"<br>");
+				document.writeln("Fork: "+(c.forktime/1000)+"s<br>");				
+				document.writeln("Images: "+c.sum+"<br>");			
+				var imagespage=c.ImagesPage;					
+				for(var i=0;i<imagespage.length;i++){
+					document.writeln("ImagePage: "+imagespage[i]["key"]+"<br>");
+					document.writeln("<span><a href=\"javascript:void(0);\" onclick=\"aaone(this,"+i+");\">Action</a>: <a class=\"ipage\" target=\"_blank\" href=\"picsize.php?pageurl="+imagespage[i]["afn"]+"&name="+c.name+"\">"+imagespage[i]["key"]+"</a>&nbsp;<a onmouseover=\"pics.over(this);\" onmouseout=\"pics.out(this);\" target=\"_blank\" class=\"prw\" href=\"\"></a></span><br>");
+				}
+				document.writeln("</div><hr><a target=\"_blank\" href=\"getlist.php?new=1\">New</a>"+((c.pages>page)?"&nbsp;<a href=\"javascript:void(0);\" onclick=\"loadpage(page+1);\">Next Page</a>":"")+((c.pages>1)?"&nbsp;<a href=\"javascript:void(0);\" onclick=\"loadpage(1);\">First Page</a>&nbsp;<a href=\"javascript:void(0);\" onclick=\"loadpage(c.pages);\">Final Page</a>":"")+"&nbsp;<a  target=\"_blank\" href=\"getlist.php?lookfile=1&name="+c.name+"&sum="+c.sum+"\">Look Files</a>&nbsp;<a href=\"getlist.php?url="+c.Gallery+"&page="+page+"\">Reload</a>&nbsp;<a href=\"javascript:void(0);\"onclick=\"window.location.hash='';window.location.reload();\">Refresh</a>&nbsp;<a target=\"_blank\" href=\"/gftp.php?op=home&folder="+cFolder+"\">Manage</a>&nbsp;<a href=\"javascript:void(0);\" onclick=\"history.go(-1);\">Back</a>");
+				document.title="ExHentai Project - "+c.Gallery+" - Page "+page;
+			}
+			function curl(url, code, errorcode, encoding, jsback) {
+			    loaddata(url,"GET","",code,"",errorcode,"",encoding?encoding:"gb2312",jsback);
+			}
+			function loaddata(url, type, data, code, timeout, errorcode, timeoutcode, encoding, jsback) {
+				var xmlhttp = null;
+				if (window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
+				} else{
+					if (window.ActiveXObject) {
+						xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				}
+				if (xmlhttp != null) {
+					xmlhttp.onreadystatechange = function() {
+						try{
+							if (xmlhttp.readyState == 4) {
+							//alert(xmlhttp.status);
+								if ((xmlhttp.status>= 200 && xmlhttp.status < 300) || xmlhttp.status==304) {
+									code&&code(this.response,jsback);
+								} else {
+									errorcode&&errorcode(xmlhttp.statusText,jsback);
+									//alert('Problem retrieving XML data:' + xmlhttp.statusText);
+								}
+							}
+						}catch(e){}	
+					}
+					xmlhttp.open(type, url, true);
+					timeout&&(xmlhttp.timeout = timeout);
+					timeoutcode&&(xmlhttp.ontimeout = function(){timeoutcode&&timeoutcode(this,jsback);});
+					encoding&&xmlhttp.overrideMimeType("text/html;charset=" + encoding);
+					xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					xmlhttp.send(data);
+				} else {
+					errorcode&&errorcode("Your browser does not support XMLHTTP.");
+					//alert('Your browser does not support XMLHTTP.');
+				}
+			}
+			function loadpage(p){
+				curl(cName+"/"+p+".json",function(result){
+					if(result){
+						page=p;
+						eval("c=("+result+")");cl();
+					}else{
+						alert("Page "+p+" Not Found!");
+						if(confirm("Do You Want To Get Page "+p)){
+							window.open("getlist.php?url="+(c?c.Gallery:cGallery)+"&page="+p,"_self");
+						}
+					}
+				},function(){
+						alert("Page "+p+" Not Found!");
+						if(confirm("Do You Want To Get Page "+p)){
+							window.open("getlist.php?url="+(c?c.Gallery:cGallery)+"&page="+p,"_self");
+						}
+				});
+			}
+			loadpage(page+1);
+</script>			
+<body></body>

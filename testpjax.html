@@ -1,0 +1,12 @@
+<script>
+var stateObj = { foo: "bar" };
+//history.pushState({ foo: "bar" }, "page 2", "bar.html");
+history.replaceState(null, "页面标题", "xxx.html");
+window.addEventListener("popstate", function() {
+    var currentState = history.state;
+	console.log(currentState);
+    /*
+     * 该干嘛干嘛
+    */											
+});
+</script>
